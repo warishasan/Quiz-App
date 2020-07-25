@@ -28,15 +28,15 @@ jobs:
     - name: GitHub Action for Yarn
       uses: Borales/actions-yarn@v2.3.0
       with:
-    # Yarn command1
+    # Yarn command
         cmd: install
         
     - name: creating build
-      run: npm run build
+      run: yarn build
      
     - name: installing surge
       run: npm install -g surge
-    
+      
     - name: deploying on surge
       run: surge ./build quizmania.surge.sh --token ${{ secrets.MY_TOKEN }}
     
