@@ -1,4 +1,3 @@
-import React from 'react';
 import { incomingDataType } from ".././types/QuizTypes"
 import {quizDataType} from ".././types/QuizTypes"
 async function Quizservice( totalQuestions: number, level: string) : Promise<quizDataType[]>  {
