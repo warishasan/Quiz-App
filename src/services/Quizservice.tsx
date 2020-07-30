@@ -1,11 +1,11 @@
 import { incomingDataType } from ".././types/QuizTypes"
 import {quizDataType} from ".././types/QuizTypes"
-async function Quizservice( totalQuestions: number, level: string) : Promise<quizDataType[]>  {
+async function Quizservice( totalQuestions: number, level: string, type:string, category:string) : Promise<quizDataType[]>  {
 
     const shuffleArray = (array: any[]) =>
     [...array].sort(() => Math.random() - 0.5)
 
-const incoming = await fetch (`https://opentdb.com/api.php?amount=${totalQuestions}&difficulty=${level}&type=multiple`);
+const incoming = await fetch (`https://opentdb.com/api.php?amount=${totalQuestions}&difficulty=${level}&type=${type}&category=${category}`);
 const {results} = await incoming.json();
 
 return (

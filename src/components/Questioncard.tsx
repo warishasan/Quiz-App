@@ -8,14 +8,22 @@ const Questioncard: React.FC<questionPropsType> = ({ question, options, callback
   
 let [selectedAnswer, setSelectedAnswer] = useState<string>("");
 
+function submitfn(e:React.FormEvent<EventTarget>){
+  callback(e,selectedAnswer);
+  setSelectedAnswer("");
+
+}
+
+
+
   return (
     <div className = "formElement" >
 
       <h4 className = "question">{question}</h4>
-    <form onSubmit = {(e:React.FormEvent<EventTarget>) => callback(e,selectedAnswer)}>
+    <form onSubmit = {(e:React.FormEvent<EventTarget>) => submitfn(e) }>
       {
       options.map((opt : string, ind: number) => {return (
-
+          
           <div className = "radio" key = {ind}>
           <label>
           <input  type = "radio"

@@ -61,3 +61,29 @@ body{
   background-repeat: no-repeat;
 
 }
+
+#form{
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-around;
+
+}
+
+.formSubHeadings{
+  font-size: 25px;
+  padding-bottom:10px;
+  padding-top:10px;
+}
+
+.formEntries{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#submitButton{
+
+  padding-top: 20px;
+}
